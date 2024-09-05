@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgb(37, 0, 246), rgb(122, 0, 243));
+    overflow: hidden;
+}
+.Container{
+    position: relative;
+    width: 400px;
+    height: 100px;
+    background: linear-gradient(-45deg, rgb(5, 105, 255), rgb(86, 154, 255));
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    color: aliceblue;
+    transition: height .6s ease;
+}
+.SearchBox{
+    position: relative;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+.SearchBox i{
+    position: absolute;
+    left: 10px;
+    font-size: 23px;
+    color: aliceblue;
+}
+.SearchBox input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    border-radius: 10px;
+    font-size: 22px;
+    color: aliceblue;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 48px 0 42px;
+}
+.SearchBox input::placeholder{
+    color: aliceblue;
+    text-transform: capitalize;
+}
+.SearchBox button{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 23px;
+    color: aliceblue;
+    padding: 0 40px 0 5px;
+    cursor: pointer;
+}
+.WeatherBox{
+    text-align: center;
+    margin: 40px 0;
+}
+.WeatherBox, .WeatherDetails, .NotFound{
+    overflow: hidden;
+    visibility: hidden;
+}
+.WeatherBox.active, .WeatherDetails.active, .NotFound.active{
+    visibility: visible;
+}
+.WeatherBox .Box, .NotFound .Box{
+    transform: translateY(-100%);
+}
+.WeatherBox.active .Box, .NotFound.active .Box{
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    transition-delay: 0.6s;
+}
+.WeatherBox .Box .InfoWeather{
+    transform: translateY(-120%);
+}
+.Container.active .WeatherBox .Box .InfoWeather,
+.Container.active .WeatherDetails .Humidity .InfoHumidity,
+.Container.active .WeatherDetails .Wind .InfoWind{
+    transform: translateY(0%);
+    transition: transform 1s ease;
+}
+.WeatherBox img{
+    width: 50%;
+}
+.WeatherBox .Temperature{
+    position: relative;
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 700;
+    margin: 20px 0 6px -30px;
+}
+.WeatherBox .Temperature span{
+    position: absolute;
+    font-size: 24px;
+}
+.WeatherBox .Description{
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.WeatherDetails{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+}
+.WeatherDetails .Humidity,
+.WeatherDetails .Wind{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    transform: translateY(-100%);
+}
+.WeatherDetails.active .Humidity,
+.WeatherDetails.active .Wind{
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    transition-delay: 1.2s;
+}
+.WeatherDetails .Humidity .InfoHumidity,
+.WeatherDetails .Wind .InfoWind{
+    transform: translateY(-100%);
+    overflow: hidden;
+}
+.WeatherDetails .Humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+.WeatherDetails .Wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+.WeatherDetails i{
+    font-size: 40px;
+    margin-right: 10px;
+}
+.WeatherDetails span{
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 500;
+}
+.WeatherDetails p{
+    font-size: 15px;
+    font-weight: 500;
+}
+.NotFound{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 120px;
+}
+.NotFound img{
+    width: 65%;
+}
+.NotFound p{
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+.CityHide{
+    display: none;
+}
+#CloneInfoWeather,
+#CloneInfoHumidity,
+#CloneInfoWind{
+    position: absolute;
+    transform: translateY(-100%);
+}
+#CloneInfoWeather .Weather{
+    transform: translateY(120%);
+    transition: transform 1s ease, opacity 0s;
+    transition-delay: 0s, 2s;
+}
+.WeatherBox:not(.active) #CloneInfoWeather .Weather{
+    opacity: 0;
+    transition-delay: 0s;
+}
+.ActiveClone#CloneInfoWeather .Weather{
+    transform: translateY(0%);
+}
+#CloneInfoHumidity span,
+#CloneInfoWind span{
+    transform: translateY(100%);
+    transition: transform 1s ease;
+}
+.ActiveClone#CloneInfoHumidity span,
+.ActiveClone#CloneInfoWind span{
+    transform: translateY(0%);
+}
+@media screen and (max-width: 563px) {
+    .Container{
+        width: 350px;
+    }  
+}

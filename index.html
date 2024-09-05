@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="Container">
+        <div class="SearchBox">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" placeholder="Enter City Name">
+            <button class="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <p class="CityHide">City Hide</p>
+
+        <div class="WeatherBox">
+            <div class="Box">
+                <div class="InfoWeather">
+                    <div class="Weather">
+                        <img src="cloud.png" alt="Weather Image">
+                        <p class="Temperature">0<span>&degC</span></p>
+                        <p class="Description">Broken clouds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="WeatherDetails">
+            <div class="Humidity">
+                <i class="fas fa-water"></i>
+                <div class="text">
+                    <div class="InfoHumidity">
+                        <span>0%</span>
+                    </div>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="Wind">
+                <i class="fas fa-wind"></i>
+                <div class="text">
+                    <div class="InfoWind">
+                        <span>0Km/h</span>
+                    </div>
+                    <p>Wind speed</p>
+                </div>
+            </div>
+        </div>
+        <div class="NotFound">
+            <div class="Box">
+                <img src="404.png" alt="Error 404">
+                <p>Oops! Location Not Found</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
