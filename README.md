@@ -28,6 +28,6 @@ A simple and elegant weather application that allows users to check the current 
 
 ## Website Link
 
-Visit the Site: [https://arghya876.github.io/PRODIGY_WD_05/](https://arghya876.github.io/PRODIGY_WD_05/)
+Visit the Site: [ https://saurav0321.github.io/PRODIGY_WD_05/]( https://saurav0321.github.io/PRODIGY_WD_05/)
 
 Feel free to explore the code and try it out!
