@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather App - Get real-time weather updates including temperature, humidity, and wind speed for your city.">
     <title>Weather App</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
@@ -12,8 +13,10 @@
     <div class="Container">
         <div class="SearchBox">
             <i class="fa-solid fa-location-dot"></i>
-            <input type="text" placeholder="Enter City Name">
-            <button class="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" placeholder="Enter City Name" aria-label="City Name Input">
+            <button class="Search" aria-label="Search for Weather">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </div>
 
         <p class="CityHide">City Hide</p>
@@ -22,7 +25,7 @@
             <div class="Box">
                 <div class="InfoWeather">
                     <div class="Weather">
-                        <img src="cloud.png" alt="Weather Image">
+                        <img src="cloud.png" alt="Weather Icon">
                         <p class="Temperature">0<span>&degC</span></p>
                         <p class="Description">Broken clouds</p>
                     </div>
@@ -51,7 +54,7 @@
         </div>
         <div class="NotFound">
             <div class="Box">
-                <img src="404.png" alt="Error 404">
+                <img src="404.png" alt="Error 404 Icon">
                 <p>Oops! Location Not Found</p>
             </div>
         </div>
